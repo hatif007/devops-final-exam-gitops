@@ -1,7 +1,7 @@
 pods:
   image: hatif007/devops-final-exam
   tag: "22"
-  replicas: 2
+  replicas: 5
   containerPort: 8082
 resources:
   requests:
