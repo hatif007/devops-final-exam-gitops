@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: flask-applicationset
+  namespace: argocd
+spec:  
+  generators:
+    - git:
+        repoURL: https://github.com/hatif007/devops-final-exam-gitops  
+        revision: main
+        directories:  
+          - path: environments/*
+  template:
+    metadata:
+      name: '{{path.basename}}-flask-app'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/hatif007/devops-final-exam-gitops' 
+        targetRevision: main                          
+        path: charts/devops-final-exam
+        helm:
+          valueFiles:
+            - '../../{{path}}/values.yaml'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true  
+        syncOptions:
+          - CreateNamespace=true    
+          
+     
+
+
+   
