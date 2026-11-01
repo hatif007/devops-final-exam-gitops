@@ -1,6 +1,6 @@
 pods:
   image: hatif007/devops-final-exam
-  tag: "22"
+  tag: "5"
   replicas: 2
   containerPort: 8082
 resources:
@@ -11,4 +11,4 @@ resources:
     cpu: "500m"
     memory: "2Gi"
 ingress:
-  enabled: false    
+  enabled: false
