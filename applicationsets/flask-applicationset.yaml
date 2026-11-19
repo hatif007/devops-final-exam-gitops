@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/hatif007/devops-final-exam-gitops  
         revision: main
         directories:  
-          - path: environments/*
+          - path: environments/dev
   template:
     metadata:
       name: '{{path.basename}}-flask-app'
