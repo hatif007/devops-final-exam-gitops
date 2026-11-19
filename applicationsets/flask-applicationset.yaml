@@ -10,6 +10,7 @@ spec:
         revision: main
         directories:  
           - path: environments/dev
+          - path: environments/qa
   template:
     metadata:
       name: '{{path.basename}}-flask-app'
