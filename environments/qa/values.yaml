@@ -12,3 +12,5 @@ resources:
     memory: "2Gi"
 ingress:
   enabled: false
+smokeTest:
+  enabled: false

@@ -1,0 +1,20 @@
+{{- if .Values.smokeTest.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: smoke-test
+  
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      containers:
+        - name: smoke-test
+          image: curlimages/curl:latest
+          args:
+            - "-fsS"
+            - "http://prd-flask-app-service:80"
+      restartPolicy: Never
+  
+{{- end }}
