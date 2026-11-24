@@ -11,6 +11,7 @@ spec:
         directories:  
           - path: environments/dev
           - path: environments/qa
+          - path: environments/prd
   template:
     metadata:
       name: '{{path.basename}}-flask-app'
