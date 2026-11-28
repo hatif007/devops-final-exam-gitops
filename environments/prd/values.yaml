@@ -1,6 +1,6 @@
 pods:
   image: hatif007/devops-final-exam
-  tag: "github-63"
+  tag: "github-64"
   replicas: 5
   containerPort: 8082
 resources:
